@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Suthigoseeya's - Subpage 1</title>
+    <style>
+        .muffin-container {
+            position: absolute;
+            display: none;
+        }
+
+        .muffin-img {
+            width: 20px; /* Adjust the size of the muffin as needed */
+            height: 20px;
+            margin-right: 10px; /* Add some spacing between muffins */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: silver;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid;
+            text-align: center;
+        }
+
+        nav {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+            nav a {
+                margin: 0 15px;
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+
+        h2 {
+            font-size: 45px;
+            color: black;
+            font-family: "Helvetica";
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Repeat header and navigation from index.html -->
+    <button id="muffinButton">Click me for a muffin!</button>
+
+    <div id="muffinContainer" class="muffin-container">
+        <!-- Initially, there's no muffin in the container -->
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const muffinButton = document.getElementById('muffinButton');
+            const muffinContainer = document.getElementById('muffinContainer');
+
+            // Add a click event listener to the button
+            muffinButton.addEventListener('click', function () {
+                // Show the muffin container
+                muffinContainer.style.display = 'block';
+
+                // Create a new muffin image element
+                const newMuffin = document.createElement('img');
+                newMuffin.src = 'Images/chocolate-chip-gingerbread-mini-muffins-1493-3395338678.jpg'; // Adjust the image source
+                newMuffin.alt = 'Muffin';
+                newMuffin.classList.add('muffin-img');
+
+                // Append the new muffin to the container
+                muffinContainer.appendChild(newMuffin);
+
+                // Position the new muffin next to the previous one
+                const muffins = document.querySelectorAll('.muffin-img');
+                const lastMuffin = muffins[muffins.length - 2]; // Get the previous muffin
+                const offset = lastMuffin ? lastMuffin.getBoundingClientRect().right + 10 : 0; // Add 10px spacing
+                newMuffin.style.left = offset + 'px';
+            });
+        });
+    </script>
+    <header>
+        <h1>Em Suthigoseeya's Final Project</h1>
+    </header>
+    <main>
+        <h2>Muffins</h2>
+        <p>Let's be fair and assess the pros and cons of muffins.</p>
+        <!-- Additional content goes here -->
+        <img src="Images/pexels-photo-3650437.jpg" width="300" height="300">
+        <img src="Images/istockphoto-539085530-612x612.jpg" width="400" height="300">
+        <img src="Images/pexels-photo-1657343.jpeg" width="400" height="300">
+        <table>
+            <tr>
+                <th>Pros</th>
+                <th>Cons</th>
+            </tr>
+            <tr>
+                <td><b>- Convenience:</b> Muffins are convenient and portable, making them a quick and easy snack or breakfast option.</td>
+                <td><b>- Nutritional Content:</b> Many commercial muffins can be high in sugar, unhealthy fats, and calories, potentially contributing to an unhealthy diet if consumed in excess.</td>
+            </tr>
+            <tr>
+                <td><b>- Variety:</b> There are numerous flavors and types of muffins available, catering to a wide range of preferences. Whether you like sweet, savory, fruity, or nutty, there's likely a muffin flavor for you.</td>
+                <td><b>- Ingredients:</b> Some muffin recipes may include processed or artificial ingredients, which may not align with a preference for whole and natural foods.</td>
+            </tr>
+            <tr>
+                <td><b>- Portion Control:</b> Muffins are typically portion-sized, which can be beneficial for those looking to control their food intake.</td>
+                <td><b>- Allergens:</b> Muffins commonly contain allergens such as gluten, dairy, and nuts, which can be problematic for individuals with allergies or dietary restrictions.</td>
+            </tr>
+        </table>
+    </main>
+
+    <!-- Repeat footer from index.html -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Final_Project_es_mainpage.html">Main Page</a>
+        <a href="Final_Project_es_subpage1.html">Subpage 1</a>
+        <a href="Final_Project_es_subpage2.html">Subpage 2</a>
+    </nav>
+</body>
+</html>

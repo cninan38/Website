@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Suthigoseeya's - Subpage 1</title>
+    <style>
+        .cupcake-container {
+            position: absolute;
+            display: none;
+        }
+
+        .cupcake-img {
+            width: 20px; /* Adjust the size of the cupcake as needed */
+            height: 20px;
+            margin-right: 10px; /* Add some spacing between cupcakes */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: silver;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid;
+            text-align: center;
+        }
+
+        nav {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+            nav a {
+                margin: 0 15px;
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+
+        h2 {
+            font-size: 45px;
+            color: black;
+            font-family: "Helvetica";
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Repeat header and navigation from index.html -->
+    <button id="cupcakeButton">Click me for a cupcake!</button>
+
+    <div id="cupcakeContainer" class="cupcake-container">
+        <!-- Initially, there's no cupcake in the container -->
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cupcakeButton = document.getElementById('cupcakeButton');
+        const cupcakeContainer = document.getElementById('cupcakeContainer');
+
+        // Add a click event listener to the button
+        cupcakeButton.addEventListener('click', function () {
+            // Show the cupcake container
+            cupcakeContainer.style.display = 'block';
+
+            // Create a new cupcake image element
+            const newCupcake = document.createElement('img');
+            newCupcake.src = 'Images/pexels-photo-1055271.jpeg'; // Adjust the image source
+            newCupcake.alt = 'Cupcake';
+            newCupcake.classList.add('cupcake-img');
+
+            // Append the new cupcake to the container
+            cupcakeContainer.appendChild(newCupcake);
+
+            // Position the new Cupcake next to the previous one
+            const Cupcakes = document.querySelectorAll('.Cupcake-img');
+            const lastCupcake = cupcakes[cupcakes.length - 2]; // Get the previous cupcake
+            const offset = lastCupcake ? lastCupcake.getBoundingClientRect().right + 10 : 0; // Add 10px spacing
+            newCupcake.style.left = offset + 'px';
+        });
+    });
+    </script>
+    <header>
+        <h1>Em Suthigoseeya's Final Project</h1>
+    </header>
+    <main>
+        <h2>Cupcakes</h2>
+        <p>Let's be fair and assess the pros and cons of cupcakes.</p>
+        <!-- Additional content goes here -->
+        <img src="Images/free-photo-of-cupcakes-with-multi-colored-frosting.jpeg" width="300" height="300">
+        <img src="Images/pexels-photo-853004.jpg" width="300" height="300">
+        <img src="Images/pexels-photo-1055270.jpeg" width="300" height="300">
+        <table>
+            <tr>
+                <th>Pros</th>
+                <th>Cons</th>
+            </tr>
+            <tr>
+                <td><b>- Portion Control:</b> Cupcakes offer built-in portion control, making it easier for individuals to manage their servings and avoid overindulgence..</td>
+                <td><b>- Portion Size:</b> While portion control can be a pro, it can also be a con for those who prefer larger servings. Some people may find cupcakes too small and unsatisfying.</td>
+            </tr>
+            <tr>
+                <td><b>- Variety:</b> Cupcakes come in a wide variety of flavors, allowing for creative and diverse options to suit different tastes and preferences.</td>
+                <td><b>- Tendency to Dry Out:</b> Due to their smaller size, cupcakes can sometimes dry out faster than larger cakes if not stored properly.</td>
+            </tr>
+            <tr>
+                <td><b>- Convenience:</b> Cupcakes are convenient for both serving and eating. They are easy to distribute at events and gatherings without the need for cutting and plating.</td>
+                <td><b>- Caloric Density:</b> Despite their small size, cupcakes can be calorie-dense, especially when topped with rich frosting and additional decorations. This can be a concern for those watching their calorie intake.</td>
+            </tr>
+        </table>
+    </main>
+
+    <!-- Repeat footer from index.html -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Final_Project_es_mainpage.html">Main Page</a>
+        <a href="Final_Project_es_subpage1.html">Subpage 1</a>
+        <a href="Final_Project_es_subpage2.html">Subpage 2</a>
+    </nav>
+</body>
+</html>
